@@ -1,0 +1,423 @@
+/* Rutherford Labbe: 12-18-2023 */
+
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gasoek+One&family=Lilita+One&family=Pacifico&display=swap');
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+/* Sets color for use */
+:root{
+    --Blue: #0000ff;
+    --Stratos: #000055;
+    --DarkBlue: #0000aa;
+    --Mirage: #161A30;
+}
+
+/* Adds background color to body */
+body{
+    background-color: var(--Blue);
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+html{
+    /* Hides scroll bar */
+    overflow: hidden;
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+/* Holds the name of the game and the start button */
+#title_card{
+    /* Centers element vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /*background-color: bisque;*/
+    padding: 50px;
+
+    /* Sets text color */
+    color: white;
+}
+
+/* Holds the name of the game */
+#title_card h1{
+    margin-top: -7px;
+    margin-bottom: 10px;
+    font-size: 4vw;
+
+    /* Sets the font family */
+    font-family: 'Pacifico', sans-serif;
+}
+
+
+/* Holds the start button */
+#start_button{
+    /* Centers element */
+    margin: 0 auto;
+    background-color: var(--Mirage);
+
+    /* The width dimension is the size of the content element */
+    width: fit-content;
+
+    padding: 10px 25px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: 5px solid white;
+
+    /* Sets the font family */
+    font-family: 'Archivo Black', sans-serif;
+}
+
+/* On hover the background color opacity goes to zero */
+#start_button:hover{
+    cursor: pointer;
+    background-color: rgba(0, 255, 255, 0);
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+article{
+    /* Centers child element */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Align parent element vertically */
+    height: 95vh;
+}
+
+#square_box{
+    /* Sets dimensions */
+    width: 40em;
+    height: 40em;
+
+    /* Centers child element */
+    display: grid;
+    place-items: center;
+
+    /* Adjust height of the parent element */
+    height: 80vh;
+
+    /* Adds smooth transition for scaling */
+    transition: transform 0.5s ease;
+
+    /* Hides element */
+    visibility: hidden;
+}
+
+.grid_container{
+    /* Sets dimensions */
+    width: 30em;
+    height: 30em;
+
+    /* 1 row 3 columns grid */
+    display: grid;
+    grid-template-columns: repeat(3, 152px);
+    grid-gap: 20px;
+}
+
+.grid_item{
+    /* Sets dimensions */
+    width: 152px;
+    height: 152px;
+
+    border-radius: 18px;
+    border: 3px solid white;
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+.side_box{
+    /* Centers element vertically and horizontally */
+    position: absolute;
+    top: 51.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Sets dimensions */
+    width: 90vw;
+    height: 45%;
+
+    /* Add flex row to child element */
+    display: flex;
+    flex-direction: row;
+    gap: 38em;
+
+    /* Align child element */
+    justify-content: center;
+    align-items: center;
+
+    /* Layer behind the square box */
+    z-index: -1;
+
+    /* Adds border radius */
+    border-radius: 20px;
+
+    /* Adds left border */
+    border-left: 10px solid white;
+    /* Adds right border */
+    border-right: 10px solid white;
+}
+
+.item_one,
+.item_two{
+    /* Sets dimensions */
+    width: 16.875em;
+    height: 16.875em;
+
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x_mark_wrapper,
+.o_mark_wrapper{
+    /* Sets dimensions */
+    width: 12.5em;
+    height: 12.5em;
+
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    background-color: var(--Stratos);
+    
+}
+
+.x_mark_wrapper .x_one,
+.x_mark_wrapper .x_two{
+    /* Keeps element inside the parent element */
+    position: fixed;
+
+    /* Sets dimensions */
+    width: 35px;
+    height: 200px;
+
+    /* Rotate element 45 degrees */
+    transform: rotate(45deg);
+
+    border-radius: 20px;
+    background-color: aqua;
+}
+
+.x_mark_wrapper .x_two{
+    /* Rotate element 45 degrees */
+    transform: rotate(-45deg);
+}
+
+.o_mark_wrapper .o_mark{
+    /* Sets dimensions */
+    width: 115px;
+    height: 115px;
+
+    /* Border radius of 50% creates a circle */
+    border-radius: 50%;
+
+    border: 30px solid aqua;
+
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+.grid_item{
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Allows child elements to be layered on top of each other */
+    position: relative;
+}
+
+.grid_item:hover{
+    cursor: pointer;
+    background-color: var(--Stratos);
+}
+
+.grid_item > .o_mark_wrapper_two{
+    /* Centers element vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.x_mark_wrapper_two{
+    /* Sets dimensions */
+    width: 7em;
+    height: 7em;
+
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Hides the X marks */
+    opacity: 0;
+    border-radius: 5px;
+}
+
+
+.x_mark_wrapper_two .x_one,
+.x_mark_wrapper_two .x_two{
+    /* Keeps element inside the parent element */
+    position: fixed;
+
+    /* Sets dimensions */
+    width: 30px;
+    height: 120px;
+
+    /* Rotate element 45 degrees */
+    transform: rotate(45deg);
+
+    border-radius: 20px;
+    background-color: aqua;
+}
+
+.x_mark_wrapper_two .x_two{
+    /* Rotate element 45 degrees */
+    transform: rotate(-45deg);
+}
+
+.o_mark_wrapper_two{
+    /* Sets dimensions */
+    width: 7em;
+    height: 7em;
+
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Hides the O marks */
+    opacity: 0;
+    border-radius: 5px;
+}
+
+.o_mark_wrapper_two .o_mark{
+    /* Sets dimensions */
+    width: 50px;
+    height: 50px;
+
+    /* Border radius of 50% creates a circle */
+    border-radius: 50%;
+
+    border: 25px solid aqua;
+
+    /* Centers child element */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+#restart_card{
+    /* Centers element vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Align child elements vertically */
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+
+    /* Hides element */
+    visibility: hidden;
+}
+
+#restart_card h1{
+    margin-top: -7px;
+    margin-bottom: 15px;
+    font-size: 6vw;
+
+    /* Sets the font family */
+    font-family: 'Archivo Black', sans-serif;
+}
+
+#x_wins,
+#o_wins{
+    color: white;
+    display: none;
+}
+
+#tie{
+    color: #00BF63;
+    display: none;
+}
+#restart_button{
+
+    margin: 0 auto;
+    background-color: var(--Mirage);
+    width: fit-content;
+
+    padding: 10px 25px;
+
+    border-radius: 25px;
+    border: 5px solid white;
+
+    font-size: 1.2em;
+
+    color: white;
+
+    /* Sets the font family */
+    font-family: 'Archivo Black', sans-serif;
+}
+
+#restart_button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* --------------------------------- Section Divider --------------------------------- */
+
+
+@media screen and (min-width: 360px){
+    #square_box{
+        transform: scale(0.5);
+    }
+
+    .side_box{
+        /* Add flex row to child element */
+        display: flex;
+        flex-direction: column;
+        gap: 18em;
+    }
+
+    .item_one,
+    .item_two{
+        transform: scale(0.5);
+    }
+}
+
+@media screen and (min-width: 1200px){
+    #square_box{
+        transform: scale(1);
+    }
+
+    .side_box{
+        /* Add flex row to child element */
+        display: flex;
+        flex-direction: row;
+        gap: 39em;
+    }
+
+    .item_one,
+    .item_two{
+        transform: scale(1);
+    }
+}
+
