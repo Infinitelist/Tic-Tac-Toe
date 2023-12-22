@@ -50,6 +50,9 @@ html{
 
     /* Sets the font family */
     font-family: 'Pacifico', sans-serif;
+
+    /* Align test at the center */
+    text-align: center;
 }
 
 
